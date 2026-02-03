@@ -1,0 +1,75 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { AnimatePresence } from 'framer-motion';
+import { Book, ArrowLeft } from 'lucide-react';
+import { getLibrary, deleteBook, StoredBook } from '@/lib/storage';
+import { useReaderContext } from '@/context/ReaderContext';
+import LibraryBookCard from '@/components/LibraryBookCard';
+
+export default function LibraryPage() {
+  const [books, setBooks] = useState<StoredBook[]>([]);
+  const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
+  const router = useRouter();
+  const { setWords, setCurrentBookId, setMode } = useReaderContext();
+
+  useEffect(() => {
+    setBooks(getLibrary());
+  }, []);
+
+  const handleOpenBook = (book: StoredBook) => {
+    setWords(book.words);
+    setCurrentBookId(book.id);
+    setMode(null);
+    router.push('/mode-select');
+  };
+
+  const handleDelete = (id: string) => {
+    deleteBook(id);
+    setBooks(books.filter(b => b.id !== id));
+    setDeleteConfirm(null);
+  };
+
+  return (
+    <main className="min-h-screen bg-background text-foreground relative flex flex-col">
+      <button 
+        onClick={() => router.push('/upload')} 
+        className="back-button btn"
+        style={{ position: 'absolute', top: '2rem', left: '2rem' }}
+      >
+        ← Back
+      </button>
+
+      {/* Main Content */}
+      <div className="w-full max-w-5xl mx-auto pb-12 px-8" style={{ marginTop: '150px' }}>
+
+        {books.length === 0 ? (
+          <div className="glass-panel text-center py-16 px-8 max-w-lg mx-auto">
+            <Book size={48} className="text-muted mx-auto mb-4" />
+            <p className="text-muted mb-6">No books yet. Upload your first book to get started!</p>
+            <button onClick={() => router.push('/upload')} className="btn btn-primary">
+              Upload Book
+            </button>
+          </div>
+        ) : (
+          <div className="flex flex-wrap justify-center gap-6">
+            <AnimatePresence>
+              {books.map((book) => (
+                <LibraryBookCard
+                  key={book.id}
+                  book={book}
+                  onOpen={handleOpenBook}
+                  onDeleteRequest={setDeleteConfirm}
+                  onDeleteConfirm={handleDelete}
+                  onDeleteCancel={() => setDeleteConfirm(null)}
+                  isDeleteConfirmVisible={deleteConfirm === book.id}
+                />
+              ))}
+            </AnimatePresence>
+          </div>
+        )}
+      </div>
+    </main>
+  );
+}

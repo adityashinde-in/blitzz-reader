@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blitz Reader
+
+> Reach flowstate while reading. Read better and faster.
+
+A modern speed-reading application built with Next.js. Blitz Reader helps you consume information faster using scientifically backed methods like RSVP (Rapid Serial Visual Presentation) and guided flow reading.
+
+## Features
+
+- **Flash Mode (RSVP)**: Words flash one-by-one at your chosen speed for maximum reading velocity.
+- **Flow Mode**: Smooth horizontal text stream for natural, guided reading.
+- **Book Mode**: Full-page view with word-by-word highlighting and paragraph preservation.
+- **Speed Control**: Adjust from 100 to 1000+ WPM to find your perfect pace.
+- **Smart Library**: Upload once, read anywhere. Progress is saved automatically.
+- **Bookmarks**: Save your position and jump back to any point.
+- **Focus Interface**: Dark, minimal design engineered to keep you in flow.
+
+### Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| `Space` | Play/Pause |
+| `←` / `→` | Navigate words |
+| `↑` / `↓` | Adjust Speed (WPM) |
+| `B` | Toggle Bookmarks Panel |
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS + Custom CSS
+- **Animation**: Framer Motion
+- **Icons**: Lucide React
+- **PDF Processing**: pdfjs-dist
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Clone the repository
+git clone <repository-url>
+cd blitz-reader
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Privacy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All books and reading progress are stored locally in your browser. No data is uploaded to any external server.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! Feel free to submit a Pull Request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+MIT
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made by [@aniket](https://aniketgprofile.vercel.app/)
