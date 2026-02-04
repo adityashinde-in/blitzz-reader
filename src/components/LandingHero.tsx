@@ -41,7 +41,8 @@ export default function LandingHero({ onStart }: LandingHeroProps) {
         transition={{ duration: 0.8 }}
       >
         <h1 className="hero-title">
-          BLITZ <br className="hero-title-break" />
+          <img src="/assets/logo.svg" alt="BLITZ" className="hero-title-logo" />
+          <br className="hero-title-break" />
           <span className="text-gradient-primary">READER</span>
         </h1>
 

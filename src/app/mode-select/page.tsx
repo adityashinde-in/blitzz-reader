@@ -32,6 +32,10 @@ export default function ModeSelectPage() {
         animate={{ opacity: 1 }} 
         className="page-center relative"
       >
+        <button onClick={() => router.push('/upload')} className="back-button btn">
+          ← Back
+        </button>
+
         <div className="section-header">
           <h2 className="section-title">Choose Your <span className="text-gradient-primary">Mode</span></h2>
           <p className="section-subtitle">

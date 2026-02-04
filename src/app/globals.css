@@ -62,6 +62,65 @@ body {
   overflow-x: hidden;
 }
 
+.intro-splash {
+  position: fixed;
+  inset: 0;
+  background: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.intro-splash-logo {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: intro-logo 0.65s ease forwards;
+}
+
+.intro-splash-logo-img {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.intro-app {
+  opacity: 0;
+}
+
+.intro-app-visible {
+  animation: intro-app 0.25s ease forwards;
+}
+
+@keyframes intro-logo {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes intro-app {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 ::selection {
   background-color: rgba(249, 115, 22, 0.3);
   color: white;
@@ -98,11 +157,6 @@ body {
   right: 0;
   z-index: 50;
   padding: 2px 0;
-}
-
-/* Hide navbar on reader page */
-.reader-page .navbar {
-  display: none;
 }
 
 .navbar-inner {
@@ -773,12 +827,18 @@ body {
   }
 }
 
+.hero-title-logo {
+  height: 1.1em;
+  width: auto;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
 .hero-title {
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 2rem;
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 @media (min-width: 768px) {
