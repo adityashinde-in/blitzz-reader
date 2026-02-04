@@ -1072,9 +1072,6 @@ body {
  * ============================================================================= */
 
 /* Hero section radial gradient glow - creates subtle orange ambient light */
-/* .bg-gradient-hero {
-  background: radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.08) 0%, rgba(0, 0, 0, 0) 50%);
-} */
 
 /* Gradient text effect - orange to purple gradient on text
  * Requires: background-clip: text + transparent text color */

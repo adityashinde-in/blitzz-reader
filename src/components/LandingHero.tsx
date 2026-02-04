@@ -32,7 +32,6 @@ export default function LandingHero({ onStart }: LandingHeroProps) {
     <section id="home" className="section hero">
       
       {/* Background Gradients */}
-      <div className="hero-bg bg-gradient-hero" />
       <div className="hero-glow" />
 
       <motion.div
