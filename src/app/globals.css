@@ -799,32 +799,16 @@ body {
   font-weight: 600;
 }
 
-.hero-glow {
+.hero-glow-img {
   position: absolute;
-  top: 25%;
-  left: 25%;
-  width: 24rem;
-  height: 24rem;
-  background: rgba(255, 51, 51, 0.2);
-  border-radius: 50%;
-  filter: blur(128px);
-  z-index: -10;
-  animation: hero-pulse 4s ease-in-out infinite;
-}
-
-@keyframes hero-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.08);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  max-width: 90vw;
+  height: auto;
+  z-index: -1;
+  opacity: 0.2;
 }
 
 .hero-title-logo {

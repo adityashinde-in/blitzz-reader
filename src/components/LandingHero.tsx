@@ -32,7 +32,7 @@ export default function LandingHero({ onStart }: LandingHeroProps) {
     <section id="home" className="section hero">
       
       {/* Background Gradients */}
-      <div className="hero-glow" />
+      <img src="/assets/orange-ellipse.svg" alt="" className="hero-glow-img" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
