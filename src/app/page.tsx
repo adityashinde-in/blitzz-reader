@@ -1,7 +1,6 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import Navbar from '@/components/Navbar';
 import LandingHero from '@/components/LandingHero';
 import Features from '@/components/Features';
 import HowItWorks from '@/components/HowItWorks';
@@ -12,12 +11,10 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <main className="bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
-      <Navbar />
-      
+    <main className="home-main">
       <LandingHero onStart={() => router.push('/upload')} />
       
-      <div className="relative z-10 bg-background/95 backdrop-blur-3xl">
+      <div className="home-sections">
         <Features />
         <HowItWorks />
         <About />
