@@ -829,6 +829,7 @@ body {
 
 .hero-title-logo {
   height: 1.1em;
+  margin-bottom: -0.2em;
   width: auto;
   display: inline-block;
   vertical-align: baseline;
